@@ -2,7 +2,7 @@ const util = require("util");
 const multer = require("multer");
 const ResponseModel = require("../models/response_model");
 
-const DIR = "./public/uploads/";
+const DIR = "./public/images/";
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {

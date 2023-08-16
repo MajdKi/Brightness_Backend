@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
             },
             image:
             {
-                type: DataTypes.INTEGER,
+                type: DataTypes.STRING,
                 defaultValue: "https://ibb.co/SK1nY1y"
             }
 

@@ -23,15 +23,13 @@ class BookingController {
     try {
       var _book = await models.Booking.create(req.body)
       var _get = await models.User.findAll({where:{id : req.body.userId}});
-      console.log(_get)
-      console.log(_get[0]['dataValues']['points'])
-      console.log(1111111111)
+
       var _decrease = await models.User.update({ points: _get[0]['dataValues']['points'] -req.body.firstPaid }, {
         where: {
           id: req.body.userId
         }
       })
-      console.log(22222222)
+
       await t.commit();
       next(
         new ResponseModel({

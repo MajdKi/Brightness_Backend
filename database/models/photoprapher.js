@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             this.hasMany(models.Booking, { foreignKey: 'photographerId' })
             this.hasMany(models.PhotographerServicesCategory, { foreignKey: 'photographerId' })
+            this.hasMany(models.Post, { foreignKey: 'photographerId' })
         }
     }
     Photographer.init(
