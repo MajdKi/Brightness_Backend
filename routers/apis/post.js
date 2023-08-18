@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/",PostController.get,(data,req,res,next)=>{
     res.status(data.statusCode).json(data)
 })
-router.get("/byPhotographer",PostController.getByPhotographer,(data,req,res,next)=>{
+router.get("/byPhotographer/:id",PostController.getByPhotographer,(data,req,res,next)=>{
     res.status(data.statusCode).json(data)
 })
 router.post("/add",PostController.add,(data,req,res,next)=>{

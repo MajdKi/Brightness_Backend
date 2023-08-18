@@ -64,6 +64,11 @@ module.exports = (sequelize, DataTypes) => {
             isPremium: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
+            },
+            image:
+            {
+                type: DataTypes.STRING,
+                defaultValue: "https://i.ibb.co/VvhSnh9/person-palce-holder.jpg"
             }
 
         },

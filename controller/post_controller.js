@@ -7,7 +7,7 @@ class PostController {
     static getByPhotographer = async (req, res, next) => {
         var _get = await models.Post.findAll({
             where: {
-                photographerId: req.body.photographerId
+                photographerId: req.params.id
             }
         });
         next(
@@ -20,7 +20,11 @@ class PostController {
     }
 
     static get = async (req, res, next) => {
-        var _get = await models.Post.findAll();
+        var _get = await models.Post.findAll({
+            include : [{
+                model: models.Photographer
+            }]
+        });
         next(
             new ResponseModel({
                 statusCode: 200,

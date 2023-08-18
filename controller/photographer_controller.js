@@ -3,6 +3,7 @@ const models = require("../database/models")
 const ResponseModel = require("../models/response_model")
 const db = require("../database/models/index")
 
+
 class PhotographerController {
 
     static get = async (req, res, next) => {
@@ -32,6 +33,7 @@ class PhotographerController {
     }
 
     static getConfirms = async (req, res, next) => {
+        console.log(25641)
         var _get = await models.Photographer.findAll({
             where: { isConfirmed: true }
         });
@@ -44,13 +46,14 @@ class PhotographerController {
         )
     }
 
-
-    static getPremium = async (req, res, next) => {
-        var _get = await models.Photographer.findAll({
-            where: {
-                isPremium: true
+    static getPr = async (req, res, next) => {
+        var _get = await models.Photographer.findAll(
+            {
+                where: {
+                    isPremium: true
+                }
             }
-        });
+        );
         next(
             new ResponseModel({
                 statusCode: 200,
