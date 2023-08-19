@@ -7,7 +7,7 @@ const express = require('express')
 
 const app = express();
 app.use(bodyParser.json());
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
   console.log('Connection has been established successfully.');
 })
 .catch(err => {

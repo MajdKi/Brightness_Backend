@@ -19,25 +19,25 @@ let storage = multer.diskStorage({
 
 let upload = multer({
   storage: storage,
-  limits: {
-    fileSize: 1024 * 1024 * 5,
-  },
-  fileFilter: (req, file, cb) => {
-    if (
-      file.mimetype == "image/png" ||
-      file.mimetype == "image/jpg" ||
-      file.mimetype == "image/jpeg"
-    ) {
-      cb(null, true);
-    } else {
-      cb(null, false);
-      return cb({
-        message: "File types allowed .jpeg, .jpg and .png!"
-      });
-    }
-  },
-}).single("file");
+  // limits: {
+  //   fileSize: 1024 * 1024 * 5,
+  // },
+  // fileFilter: (req, file, cb) => {
+  //   if (
+  //     file.mimetype == "image/png" ||
+  //     file.mimetype == "image/jpg" ||
+  //     file.mimetype == "image/jpeg"
+  //   ) {
+  //     cb(null, true);
+  //   } else {
+  //     cb(null, false);
+  //     return cb({
+  //       message: "File types allowed .jpeg, .jpg and .png!"
+  //     });
+  //   }
+  // },
+});
 
-let fileUploadMiddleware = util.promisify(upload);
+// let fileUploadMiddleware = util.promisify(upload);
 
-module.exports = fileUploadMiddleware;
+module.exports = upload.single("file");
