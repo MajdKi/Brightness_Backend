@@ -37,7 +37,9 @@ class PostController {
     static add = async (req, res, next) => {
         const t = await db.sequelize.transaction();
         try {
-            var _add = await models.Post.create(req.body)
+            var {title,desc,photographerId} = req.body
+            var image = req.file.filename
+            var _add = await models.Post.create({title,desc,image,photographerId})
 
 
 

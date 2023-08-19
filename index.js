@@ -3,9 +3,11 @@ const db = require("./database/models/index")
 const bodyParser = require('body-parser');
 const ResponseModel = require('./models/response_model');
 const express = require('express')
-
+const cors = require('cors')
 
 const app = express();
+app.use(express.static('public'))
+app.use(cors());
 app.use(bodyParser.json());
 db.sequelize.sync().then(() => {
   console.log('Connection has been established successfully.');
