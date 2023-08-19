@@ -13,13 +13,13 @@ const db = {};
 
 
 
-let sequelize = new Sequelize("brightness","root","123456",{
-  host: 'localhost',
-  dialect: 'mysql',
+// let sequelize = new Sequelize("brightness","root","123456",{
+//   host: 'localhost',
+//   dialect: 'mysql',
 
-})
+// })
 
-// let sequelize = new Sequelize("postgres://majd:HsJG6B4PwgZb8vrlyv7Flb2OIMewFyP7@dpg-cin811lph6evlasi8ag0-a.singapore-postgres.render.com/brightness_kuep?ssl=true")
+ let sequelize = new Sequelize("postgres://majd:HsJG6B4PwgZb8vrlyv7Flb2OIMewFyP7@dpg-cin811lph6evlasi8ag0-a.singapore-postgres.render.com/brightness_kuep?ssl=true")
 
 
 // let sequelize;
